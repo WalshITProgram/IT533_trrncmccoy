@@ -9,7 +9,7 @@ print(f"Hello \n{terrance.upper()} \n{mccoy.lower()} ")
 name = terrance +  mccoy
 print(name)
 
-#Store slices last name
+#Store slices of last name in Variable
 name1 = name[10:-2]
 print(name1)
 
