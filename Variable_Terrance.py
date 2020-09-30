@@ -18,7 +18,8 @@ name2 = name[8:-1] + " Walsh College Student"
 print(name2)
 
 #Print qoute with qoutation marks
-print("Start by doing what's necessary; then do what's possible and suddenly you are doing the impossible" )
+qoute = [("Start by doing what's necessary; then do what's possible and suddenly you are doing the impossible" )]
+print(qoute)
 
 #Store decimal as Variable 
 dem = 2.3
