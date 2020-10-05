@@ -34,20 +34,21 @@ print(add)
 
 #Store one subtraction Variable
 sub = dem - dem1
-print(f"The answer is {sub} +  " " + {div}"
+print(f"The answer is {sub}")
+
 
 #Store one multiplication Variable
- = dem * dem1
+multip = dem * dem1
 print(f"The answer is {multip}")
 
 #Store one division Variable
- div = dem / dem1
- print(div)
+div = dem / dem1
+print(div)
 
 #Store sqaure root Variable
 
-sq_root = math.sqrt(multiple)
-print(f"The sqaure root of {multiple} = {sq_root}")
+sq_root = math.sqrt(multip)
+print(f"The sqaure root of {multip} = {sq_root}")
 
 #Store current month as string variable
 month = "September"
