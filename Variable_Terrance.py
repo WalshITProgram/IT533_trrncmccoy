@@ -1,12 +1,12 @@
 #Store first and last name as a variable
-terrance = "Terrance "
-mccoy = "McCoy "
+terrance = "terrance "
+mccoy = "MCCOY "
 
 #Print Uppercase, Lowercase, Two Newlines
 print(f"Hello \n{terrance.upper()} \n{mccoy.lower()} ")
 
 #Store first and last name with space between parts
-name = terrance +  mccoy
+name = terrance + " " + mccoy
 print(name)
 
 #Store slices of last name in Variable
@@ -18,12 +18,15 @@ name2 = name[8:-1] + " Walsh College Student"
 print(name2)
 
 #Print qoute with qoutation marks
-qoute = [("Start by doing what's necessary; then do what's possible and suddenly you are doing the impossible" )]
+qoute = "\"Start by doing what's necessary; then do what's possible and suddenly you are doing the impossible\"" 
 print(qoute)
 
 #Store decimal as Variable 
-dem = 2.3
-dem1 = 1.3
+import math
+from decimal import Decimal
+ 
+dem = Decimal('2.3') 
+dem1 = Decimal('8.5')
 
 #Store one addition Variable
 add = dem1 + dem
@@ -31,18 +34,18 @@ print(add)
 
 #Store one subtraction Variable
 sub = dem - dem1
-print(sub)
+print(f"The answer is {sub} +  " " + {div}"
 
 #Store one multiplication Variable
-multiple = dem * dem1
-print(multiple)
+ = dem * dem1
+print(f"The answer is {multip}")
 
 #Store one division Variable
-div = dem/dem1
-print(div)
+ div = dem / dem1
+ print(div)
 
 #Store sqaure root Variable
-import math
+
 sq_root = math.sqrt(multiple)
 print(f"The sqaure root of {multiple} = {sq_root}")
 
