@@ -67,5 +67,5 @@ import json
 json_file = open("Transactional_data.json")
 config_data = json.load(json_file)
 json_file.close()
-config_data["Transaction_date"]
+#config_data["Transaction_date"]
 print(config_data)
