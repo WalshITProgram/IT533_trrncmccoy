@@ -44,5 +44,20 @@ print(matrix1.remove("Kane"))
 
 print(matrix1)
 
+K = (1, 2) + (3, 4)
+K1 = (1, 2) * 4
 
+K12 = K[0:2]
+print(K12)
+
+T = ('cc', 'aa', 'dd', 'll')
+tmp = list(T)
+tmp.sort()
+print(tmp)
+T = tuple(tmp)
+print(T)
+# Convert a tuples using list comprehension
+K = (2, 3, 4, 5, 6, 7)
+L = [x + 20 for x in K]
+print(L)
 
