@@ -15,5 +15,5 @@ for tran in Sales_data4:
     K = (f"Transaction Date : {tran['Transaction_date']} : Product Type: {tran.get('Product Type')} : Price: {tran.get('Price')} : Payment Type: {tran.get('Payment Type')} : Name: {tran.get('Name')} : City: {tran.get('City')} : State: {tran.get('State')} : Country: {tran.get('Country')}")
     print(K)
 print(Sales_data4)
-print(K)
+
 
