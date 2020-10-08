@@ -35,13 +35,16 @@ sales_data.append(transaction_copy_05)
 sales_data.append(transaction_copy_06)
 sales_data.append(transaction_copy_07)
 sales_data.append(transaction_copy_08)
-print(sales_data)
+
 
 for tran in sales_data:
-    print(f"{tran['Transaction_date']} : {tran.get('Product')} : {tran.get('Price')} : {tran.get('Payment_Type')} : {tran.get('Name')} : {tran.get('City')} : {tran.get(' State')} : {tran.get(' Country')}")
-
+    K = (f"Transaction Date:{tran['Transaction_date']} : Product Type: {tran.get('Product')} : Price: {tran.get('Price')} : Payment Type: {tran.get('Payment_Type')} : Name: {tran.get('Name')} : City: {tran.get('City')} : State: {tran.get(' State')} : Country: {tran.get(' Country')}")
+    print(K)
+print(sales_data)
 # Solution Method 2 
+# Open the csv file
 csv_file = open("SalesJan2009.csv")
+# Loop through lines in the csv file & performing to eliminate extra "Characters"
 for file in csv_file:
     tmp_file = file.split(",")
     tmp_file[0] = tmp_file[0][1:-1]
@@ -61,12 +64,13 @@ for file in csv_file:
     tmp_file7 = tmp_file[6]
     tmp_file8 = tmp_file[7]
     tmp_file9 = tmp_file1 + " " + tmp_file2 + " " + tmp_file3 + " " + tmp_file4 + " " + tmp_file5 + " " + tmp_file6 + " " + tmp_file7 +  " " + tmp_file8
-    print(tmp_file9)
+    print(tmp_file9) # Character Eliminated 
     sales_data1 = []
     sales_data1.append(tmp_file9)
-    print(sales_data1)
+    #print(sales_data1)
 
 # Solution Method 3
+# Create a Nested Dictionary Keys : 1 & Values : "Transaction Date"
 people = { 1: {"Transaction_date": "1/2/2009 6:17", "Product": "Product1", "Price": "1200", "Payment_Type": "Mastercard ", "Name": " Carolina", "City": " Basidon ", " State": " England", " Country": "United Kingdom"},
    2: {"Transaction_date" : "1/2/2009 4:53", "Product": "Product1", "Price": "1200", "Payment_Type": "Visa", "Name": "Betina", "City": " Parkville ", " State": "MO", " Country": "United States"},
    3: {"Transaction_date" : "1/2/2009 13:08", "Product": "Product1", "Price": "1200", "Payment_Type": "Mastercard ", "Name": "Federica e", "City": " Andrea ", " State": " Astoria", " Country": "United States"} ,
@@ -77,21 +81,19 @@ people = { 1: {"Transaction_date": "1/2/2009 6:17", "Product": "Product1", "Pric
    8: {"Transaction_date" : "1/2/2009 20:09", "Product": "Product1", "Price": "1200", "Payment_Type": "Mastercard ", "Name": " Adam", "City": " Martin ", " State": " TN", " Country": "United States"},
    9:{"Transaction_date" : "1/4/2009 13:17", "Product": "Product1", "Price": "1200", "Payment_Type": "Mastercard ", "Name": " Renee", "City": " Elisabeth ", " State": "Tel Aviv", " Country": "Israel"}}
 
-
-
+# Loop through the keys and values
 for p_id, p_info in people.items():
-    print(p_id)
+    print(p_info)
 for key in p_info:
     print(key + ':', p_info[key])
-
+# Create the JSON File
 import json
-print(json.dumps(sales_data))
 s = json.dumps(sales_data)
 o = json.loads(s)
-json.dump(sales_data, fp=open("transactional_data.json", 'w'), indent = 4)
+# Write to the JSON file by dumping the dictionary
+json.dump(sales_data, fp=open("Transactional_data.json", 'w'), indent = 4)
 json_file = open("Transactional_data.json")
 print(open("Transactional_data.json").read())
 config_data = json.load(json_file)
 json_file.close()
-#config_data["Transaction_date"]
-print(config_data)
+
