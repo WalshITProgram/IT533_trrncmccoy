@@ -41,6 +41,7 @@ for tran in sales_data:
     K = (f"Transaction Date:{tran['Transaction_date']} : Product Type: {tran.get('Product')} : Price: {tran.get('Price')} : Payment Type: {tran.get('Payment_Type')} : Name: {tran.get('Name')} : City: {tran.get('City')} : State: {tran.get(' State')} : Country: {tran.get(' Country')}")
     print(K)
 print(sales_data)
+
 # Solution Method 2 
 # Open the csv file
 csv_file = open("SalesJan2009.csv")
@@ -68,6 +69,7 @@ for file in csv_file:
     sales_data1 = []
     sales_data1.append(tmp_file9)
     #print(sales_data1)
+
 
 # Solution Method 3
 Transaction_date = ['1/2/2009 6:17', '1/2/2009 4:53', '1/2/2009 13:08', '1/3/2009 14:44', '1/4/2009 12:56', '1/4/2009 13:19', '1/4/2009 20:11', '1/2/2009 20:09', '1/4/2009 13:17']
