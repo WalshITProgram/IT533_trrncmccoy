@@ -25,36 +25,35 @@ while True:
  print(f"Please select your plan: {plan_a}, {plan_b}, {plan_c}")
  user = input("Select Workout Plan:")
 
- if user == plan_a: 
-    print(f"You have selected: {plan_a}")
-    for i in Cardio_Routine:
-        print(f"Cardio Routine: {i}")
-    
-    break
+ if user == plan_a or user == "cardio": 
+     print(f"You have selected: {plan_a}")
+     for i in Cardio_Routine: print(f"Cardio Routine: {i}") 
+     break
  
- if user == plan_b: 
-    print(f"You have selected: {plan_b}")
-    for t in Core:
-        print(f"Chest Routine:{t}")
-    break
+ if user == plan_b or user == "weightlifting": 
+     print(f"You have selected: {plan_b}")
+     for t in Core: print(f"Chest Routine:{t}")
+     break
 
- if user == plan_c: 
-    print(f"You have selected: {plan_c}")
-    for x in Crossfit:
-        print(f"Crossfit Routine:{x}")
-    break
+ if user == plan_c or user == "crossfit": 
+     print(f"You have selected: {plan_c}")
+     for x in Crossfit: print(f"Crossfit Routine:{x}")
+     break
  
 # Weights Advanced Sequence Assignment Patterns
 Weights = '0123456789'
 set1, set2, set3, set4, set5, set6, set7, set8, set9, set10 = Weights
 Weight = set2 + set4 + set5
 #print(Weight)
+
 # Calculating the BMR = 10 x Weight(kg) x Height(cm) - 5 x age(years) + 5
 # Weight Variables Converting lbs to kg 
 # BMR is an estimate of the amount of energy (calories) that your body expends when completely at rest. 
 lbs = int(input("Enter Your Weight:"))
+
 # Kilograms to pounds formula
 kg = lbs / 2.2046226218
+
 # Height Variables convert inches into cm
 Height = "Please Enter Your Height in Feet & Inches:"
 feet = int(input("Enter Your Height in Feet:"))
@@ -63,12 +62,15 @@ cm = feet * 12
 cm1 = cm + inches
 cm2 = cm1 * 2.54
 import math
+
 # Age Variables 
 age = int(input("Enter Your Age:"))
+
 # Gender Variable 
 Gender = input("Are you a Male or Female:")
 Male = "Male"
 Female = "Female"
+
 # BMR Variable
 BMR = 10 * kg + 6.25 * cm2 - 5 * age + 5
 BMR1 = 10 * kg + 6.25 * cm2 - 5 * age - 161
@@ -80,45 +82,39 @@ Jogging = 1.65
 BodyBuilding = 1.80
 Heavy_WeightLifting = 2.00
 TDCN = {Studying, Walking, Jogging, BodyBuilding, Heavy_WeightLifting}
-
 Activity = input("Select Daily Activity: Studying, Walking, Jogging, BodyBuilding, Heavy WeightLifting\n")
 
-if Gender == "Male":
- print(f"Your Basal Metabolic Rate: {math.floor(BMR)}")
-if Gender == "Male" and Activity == "Studying":
- Mtotal = math.floor(BMR) * Studying
- print(f"Your Total Daily Energy Expenditure: {Mtotal}")
-if Gender == "Male" and Activity == "Walking":
- Mtotal1 = math.floor(BMR) * Walking
- print(f"Your Total Daily Energy Expenditure: {Mtotal1}")
-if Gender == "Male" and Activity == "Jogging":
- Mtotal2 = math.floor(BMR) * Jogging 
- print(f"Your Total Daily Energy Expenditure: {Mtotal2}")
-if Gender == "Male" and Activity == "BodyBuilding":
- Mtotal3 = math.floor(BMR) * BodyBuilding
- print(f"Your Total Daily Energy Expenditure: {Mtotal3}")
-if Gender == "Male" and Activity == "Heavy WeightLifting":
- Mtotal4 = math.floor(BMR) * Heavy_WeightLifting
- print(f"Your Total Daily Energy Expenditure: {Mtotal4}")
+# Mens Daliy Caloric Variables 
+Mtotal = math.floor(BMR) * Studying
+Mtotal1 = math.floor(BMR) * Walking
+Mtotal2 = math.floor(BMR) * Jogging 
+Mtotal3 = math.floor(BMR) * BodyBuilding
+Mtotal4 = math.floor(BMR) * Heavy_WeightLifting
 
-if Gender == "Female":
- print(f"Your Basal Metabolic Rate: {math.floor(BMR1)}")
+# IF the users input matches "Male or male" print BMR 
+if Gender == "Male" or Gender == "male": print(f"Your Basal Metabolic Rate: {math.floor(BMR)}")
 
-if Activity == "Studying" and Gender == "Female":
- total = math.floor(BMR1) * Studying
- print(f"Your Total Daily Energy Expenditure: {total}")
+# IF the activity is equal to "Daily Caloric Needs"
+if Gender == "Male" and Activity == "Studying" or Activity == "studying" : print(f"Your Total Daily Energy Expenditure: {Mtotal}")
+if Gender == "Male" and Activity == "Walking" or Activity == "walking": print(f"Your Total Daily Energy Expenditure: {Mtotal1}")
+if Gender == "Male" and Activity == "Jogging" or Activity == "jogging": print(f"Your Total Daily Energy Expenditure: {Mtotal2}")
+if Gender == "Male" and Activity == "BodyBuilding" or Activity == "bodybuilding": print(f"Your Total Daily Energy Expenditure: {Mtotal3}")
+if Gender == "Male" and Activity == "Heavy WeightLifting" or Activity == "heavyweightlifting": print(f"Your Total Daily Energy Expenditure: {Mtotal4}")
 
-if Activity == "Walking" and Gender == "Female":
- total1 = math.floor(BMR1) * Walking 
- print(f"Your Total Daily Energy Expenditure: {total1}")
-if Activity == "Jogging" and Gender == "Female":
- total2 = math.floor(BMR1) * Jogging
- print(f"Your Total Daily Energy Expenditure: {total2}")
-if Activity == "BodyBuilding" and Gender == "Female": 
- total3 = math.floor(BMR1) * BodyBuilding
- print(f"Your Total Daily Energy Expenditure: {total3}")
-if Activity == "Heavy Weightlifting" and Gender == "Female":
- total4 = math.floor(BMR1) * Heavy_WeightLifting
- print(f"Your Total Daily Energy Expenditure: {total4}")
+# Females Daily Caloric Variables 
+total = math.floor(BMR1) * Studying
+total1 = math.floor(BMR1) * Walking
+total2 = math.floor(BMR1) * Jogging
+total3 = math.floor(BMR1) * BodyBuilding
+total4 = math.floor(BMR1) * Heavy_WeightLifting
+
+
+# IF the users input matches "Female or female" print BMR 
+if Gender == "Female" or Gender == "female": print(f"Your Basal Metabolic Rate: {math.floor(BMR1)}")
+if Activity == "Studying" or Activity == "studying" and Gender == "Female": print(f"Your Total Daily Energy Expenditure: {total}")
+if Activity == "Walking" or Activity == "walking" and Gender == "Female": print(f"Your Total Daily Energy Expenditure: {total1}")
+if Activity == "Jogging" or Activity ==  "jogging" and Gender == "Female": print(f"Your Total Daily Energy Expenditure: {total2}")
+if Activity == "BodyBuilding" or Activity == "bodybuilding" and Gender == "Female": print(f"Your Total Daily Energy Expenditure: {total3}")
+if Activity == "Heavy Weightlifting" or Activity ==  "heavy weightlifting" and Gender == "Female": print(f"Your Total Daily Energy Expenditure: {total4}")
 
 
