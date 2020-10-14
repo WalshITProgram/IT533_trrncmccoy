@@ -3,7 +3,8 @@
 # Basic Assignments 
 Workout_Plan = "HIIT" 
 
-plan_a, plan_b, plan_c = "Cardio", "WeightLifting", "Crossfit" # Tuple Assignment
+# Tuple Assignment
+plan_a, plan_b, plan_c = "Cardio", "WeightLifting", "Crossfit" 
 
 # WeightLifting Variables 
 Bench_Press = " Bench Press: 5 sets X 5 reps "
@@ -33,7 +34,8 @@ Pullups = " 10 Wide Grip Pulls Ups"
 Pushups = " 50 Push Ups"
 Sqauts = " 50 Sqauts"
 Burpees = " 50 Burpees"
-#Hanging Indents 
+
+# Hanging Indents 
 Crossfit = {
             Pullups, Pushups, 
             Sqauts, Burpees}

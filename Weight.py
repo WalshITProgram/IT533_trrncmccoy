@@ -19,3 +19,4 @@ bills = 34
 if (cash > 40 and 
     bills < 100 ):
     print(cash)
+if x == 4 : print(x, y; x, y = y, x)
