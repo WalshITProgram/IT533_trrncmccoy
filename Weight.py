@@ -9,8 +9,13 @@ print(*set2)
 while Weights:
     front, Weights = Weights[0], Weights[1:]
     print(front, Weights)
-import mysql.connector
+#import mysql.connector
 
-cnx = mysql.connector.connect(user = 'root' , password = 'Takegrantmodel1!', host = '127.0.0.1', database = 'MyFruitDatabase')
+#cnx = mysql.connector.connect(user = 'root' , password = 'Takegrantmodel1!', host = '127.0.0.1', database = 'MyFruitDatabase')
 
-cnx.close()
+#cnx.close(
+cash = 45
+bills = 34
+if (cash > 40 and 
+    bills < 100 ):
+    print(cash)
