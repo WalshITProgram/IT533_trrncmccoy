@@ -123,7 +123,7 @@ Jogging = 1.65
 BodyBuilding = 1.80
 Heavy_WeightLifting = 2.00
 TDCN = {Studying, Walking, Jogging, BodyBuilding, Heavy_WeightLifting}
-Activity = input("Select Daily Activity: Studying, Walking, Jogging, BodyBuilding, Heavy WeightLifting\n")
+Activity = input("Select Daily Activity: Studying, Walking, Jogging, BodyBuilding, WeightLifting\n")
 
 # Mens Daliy Caloric Variables 
 Mtotal = math.floor(BMR) * Studying
@@ -149,8 +149,8 @@ if (Gender == "Male" and
     Activity == "BodyBuilding" or
     Activity == "bodybuilding"): print(f"Your Total Daily Energy Expenditure: {Mtotal3}")
 if (Gender == "Male" and 
-    Activity == "Heavy WeightLifting" or 
-    Activity == "heavyweightlifting"): print(f"Your Total Daily Energy Expenditure: {Mtotal4}")
+    Activity == "WeightLifting" or 
+    Activity == "weightlifting"): print(f"Your Total Daily Energy Expenditure: {Mtotal4}")
 
 # Females Daily Caloric Variables 
 total = math.floor(BMR1) * Studying
@@ -175,8 +175,8 @@ if (Activity == "Jogging" or
 if (Activity == "BodyBuilding" or 
     Activity == "bodybuilding" and 
     Gender == "Female"): print(f"Your Total Daily Energy Expenditure: {total3}")
-if (Activity == "Heavy Weightlifting" or 
-    Activity ==  "heavy weightlifting" and 
+if (Activity == "Weightlifting" or 
+    Activity ==  "weightlifting" and 
     Gender == "Female"): print(f"Your Total Daily Energy Expenditure: {total4}")
 
 
