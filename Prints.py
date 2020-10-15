@@ -161,8 +161,8 @@ total4 = math.floor(BMR1) * Heavy_WeightLifting
 
 
 # IF the users input matches "Female or female" print BMR 
-if (Gender == "Female" or 
-    Gender == "female"): print(f"Your Basal Metabolic Rate: {math.floor(BMR1)}")
+if (Gender == "Female" or Gender == "female"): print(f"Your Basal Metabolic Rate: {math.floor(BMR1)}")
+
 if (Activity == "Studying" or 
     Activity == "studying" and 
     Gender == "Female"): print(f"Your Total Daily Energy Expenditure: {total}")
