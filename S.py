@@ -54,3 +54,6 @@ while True:
         print('Bad!' * 8)
     else: 
         print('Bye')
+
+
+print("this", "is", "a", "sentence.",sep ="}")
