@@ -144,11 +144,11 @@ for i in space:
     print(f"Employee List: {i}")
 
 for x in underpaid_salaries:
-    K = (f"Employee ID: {x['Employee ID']}  Name: {x.get('Name')}  Hourly Wage: {x.get('Hourly Wage')}")
+    K = (f"Employee ID: {x['Employee ID']} Name: {x.get('Name')} Hourly Wage: {x.get('Hourly Wage')}")
     print(f"Underpaid Employees: {x}")
 
 for a in company_raises:
-     K = (f"Employee ID: {x['Employee ID']}  Name: {x.get('Name')}  Hourly Wage: {x.get('Hourly Wage')}")
+     K = (f"Employee ID: {x['Employee ID']} Name: {x.get('Name')} Hourly Wage: {x.get('Hourly Wage')}")
      print(f"Employee Raises:{a}")
 
 
