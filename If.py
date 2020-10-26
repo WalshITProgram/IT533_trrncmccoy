@@ -5,130 +5,65 @@ False, 24.32, 1132, "Jacob Gerber", "Sarah Sander",
 1152, "David Toma", 22.65, 23.75, 1157, "David Toma", 
 22.65, 23.75, 1157, "Charles King", False, "Jackie Grainger", 
 1121, 22,22, False, 22.65, 1152, "David Toma"]
+names = []
+pay = []
+ids = []
 
-Id = [{"Customer ID" : 1121, "Name" : "Jackie Grainger", "Hourly Wage" : 22.22}, 
-{"Customer ID" : 1122, "Name" : "Jignesh Thrakkar", "Hourly Wage" : 22.25}, 
-{"Customer ID" : 1127, "Name" : "Dion Green", "Hourly Wage" : 28.75},
-{"Customer ID" : 1132, "Name" : "Jacob Gerber", "Hourly Wage" : 24.32},
-{"Customer ID" : 1137, "Name" : "Sarah Sander", "Hourly Wage" : 23.45},
-{"Customer ID" : 1138, "Name" : "Brandon Heck", "Hourly Wage": 25.84},
-{"Customer ID" : 1152, "Name" : "David Toma", "Hourly Wage" : 22.65},
-{"Customer ID" : 1157, "Name" : "Charles King", "Hourly Wage" : 23.75}]
+for value in Employees:
+    if type(value) == str:
+        names.append(value)
+    if type(value) == float:
+        pay.append(value)
+    if type(value) == int:
+        ids.append(value)
 
-#print(sorted(Id, key = lambda i: (i["Hourly Wage"], i["Customer ID"], i["Name"])))
+print(f"Employee Names: {names}")
+print(f"Salary: {pay}")
+print(f"IDs: {ids}")
+
+names.pop(10) 
+names.pop(9) 
+pay.pop(10) 
+pay.pop(9) 
+ids.pop(10) 
+ids.pop(9)
 
 
-for i in Id:
-    K = (f"Employee ID: {i['Customer ID']}  Name: {i.get('Name')}  Hourly Wage: {i.get('Hourly Wage')}")
-    #print(K)
 
-datastore = {"Employees":{
-    "Employee": [
-        {"Customer ID" : 1121,
-         "Name" : "Jackie Grainger", 
-         "Hourly Wage" : 22.22}, 
-        
-        {"Customer ID" : 1122, 
-        "Name" : "Jignesh Thrakkar", 
-        "Hourly Wage" : 25.25}, 
-        
-        {"Customer ID" : 1127, 
-        "Name" : "Dion Green", 
-        "Hourly Wage" : 28.75},
-        
-        {"Customer ID" : 1132, 
-        "Name" : "Jacob Gerber", 
-        "Hourly Wage" : 24.32},
-        
-        {"Customer ID" : 1137, 
-        "Name" : "Sarah Sander", 
-        "Hourly Wage" : 23.45},
-        
-        {"Customer ID" : 1138,
-         "Name" : "Brandon Heck", 
-         "Hourly Wage": 25.84},
-       
-        {"Customer ID" : 1152,
-         "Name" : "David Toma", 
-         "Hourly Wage" : 22.65},
-        
-        {"Customer ID" : 1157,
-         "Name" : "Charles King", 
-         "Hourly Wage" : 23.75}
+list_of_employees = []
 
-    ]
-} }
-#print(datastore["Employees"]["Employee"])
+for index, name in enumerate(names):
+    employee_dict = {'Name': names[index], 'Salary': pay[index], 'ID': ids[index], 'Total-Hourly-Wage': pay[index] * 1.3}
+    list_of_employees.append(employee_dict)
+    
+print(f"List of Employees:{list_of_employees}")
 
 underpaid_salaries = []
-company_raises = []
-space = datastore["Employees"]["Employee"]
-for i in space:
-    if i.get('Hourly Wage') == 22.22: 
-        i['Total Hourly Wage'] = round(1.3 * 22.22)
-        if i['Total Hourly Wage'] < 30.65:
-            underpaid_salaries.append(space[0]) 
+company_raises = [ ]
 
-
-    elif i.get('Hourly Wage') == 25.25: 
-        i['Total Hourly Wage'] = round(1.3 * 25.25)
-        if i['Total Hourly Wage'] < 30.65:
-            underpaid_salaries.append(space[1])
+for employee in list_of_employees:
+    if employee['Total-Hourly-Wage'] >= 28.15 and employee['Total-Hourly-Wage'] <= 30.65:
+        underpaid_salaries.append(employee)
         
 
-    elif i.get('Hourly Wage') == 28.75:
-        i['Total Hourly Wage'] = round(1.3 * 28.75)
-        if i['Total Hourly Wage'] < 30.65:
-            underpaid_salaries.append(space[2])
-
-    elif i.get('Hourly Wage') == 24.32:
-        i['Total Hourly Wage'] = round(1.3 * 24.32)
-        if i['Total Hourly Wage'] < 30.65:
-            underpaid_salaries.append(space[3])
-
-    elif i.get('Hourly Wage') == 23.45:
-        i['Total Hourly Wage'] = round(1.3 * 23.45)
-        if i['Total Hourly Wage'] < 30.65:
-            underpaid_salaries.append(space[4])
-
-    elif i.get('Hourly Wage') == 25.84:
-        i['Total Hourly Wage'] = round(1.3 * 25.84)
-        if i['Total Hourly Wage'] < 30.65:
-            underpaid_salaries.append(space[5])
-
-    elif i.get('Hourly Wage') == 22.65:
-        i['Total Hourly Wage'] = round(1.3 * 22.65)
-        if i['Total Hourly Wage'] < 30.65:
-         underpaid_salaries.append(space[6])
-
-    elif i.get('Hourly Wage') == 23.75:
-        i['Total Hourly Wage'] = round(1.3 * 23.75)
-        if i['Total Hourly Wage'] < 30.65:
-            underpaid_salaries.append(space[7])
-    #print(i)
-#print(underpaid_salaries)
-
-
-for t in space:
-    if t.get('Hourly Wage') == 22.22:
-       t['Hourly Wage'] = 1.05 * 22.22
-       if t['Hourly Wage'] > 22.22:
-        company_raises.append(space[0])
+           
+          
+for employee in list_of_employees:
+    if employee['Salary'] >= 22 and employee['Salary'] < 24:
+        employee['Salary'] = employee['Salary'] * 1.05
+    elif employee['Salary'] >= 24 and employee['Salary'] < 26:
+         employee['Salary'] = employee['Salary'] * 1.04
+    elif employee['Salary'] >= 26 and employee['Salary'] < 28:
+         employee['Salary'] = employee['Salary'] * 1.03
+    else:
+        employee['Salary'] = employee['Salary'] * 1.02
+    
+    company_raises.append(employee)
+    
+print(f"Underpaid Salaries: {underpaid_salaries}")
+print(f"Company Raise: {company_raises}")
+ 
         
-    print(t)
-#print(company_raises)
-  
-if i.get('Hourly Wage') == 25.25:
-    i['Hourly Wage'] = 25.25 * 1.04
-    company_raises.append(space[1])
-
-if i.get('Hourly Wage') == 22.22:
-     i['Hourly Wage'] = 1.05 * 22.22
-     company_raises.append(space[2])   
-#print(company_raises)
-
-
-
 
 
 
