@@ -14,7 +14,7 @@ while True:
       Employee_ID = input("Enter Your Employee ID:")
       # If less then 7 and not a int must repeat input
       if (len(Employee_ID) <= 7):
-         # If valid add it to employee dict [ID]
+         # If valid add it to employee dict  
          try:
             int(Employee_ID)
             employee_dict['ID'] = Employee_ID
