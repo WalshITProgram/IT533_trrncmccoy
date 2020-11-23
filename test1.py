@@ -46,6 +46,7 @@ def employee_info(employee_dict, typeinput):
 			for char in Employee_input:
 				if char not in Email_Keys and not char.isalnum():
 					bad_char_hit = True 
+					
 		if typeinput == "Address":
 			for char in Employee_input:
 				if char not in Address_Keys and not char.isalnum():
