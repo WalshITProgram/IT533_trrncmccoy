@@ -6,83 +6,98 @@ Email_valid_char = ['@', '.']
 Invalid = [ '@','!','\'', "\"", '#', '$', '%', '^', '&', '*', '(', ')',  '=', '+' , '<', '>', '/', '?', ';', ':', '[', ']', '{', '}', '\\' ]
 class Individual():
     def __init__(self):
-        self.userinput = input()
+        self.identity = " "
+        self.id = " "
+        self.name = " "
+        self.email = " "
 class Student():
     def __init__(self):
-        self.identity = input("Are you a student or instructor? ")
-        self.userid = input("Enter your user id:")
-        self.username = input("Enter your name:")
-        self.useremail = input("Enter your email address:")
-        self.usermajor = input("Enter the current program you are enrolled in?")
-    
+        self.major = " "
+class Instructor():
+    def __init__(self):
+        self.degree = " "
+        self.institution = " "
+class Validator(Individual, Student, Instructor):   
     def get_user_input(self):
+        Individual.identity = input("Are you a student or instructor? ")
+        try:
+            if Individual.identity == "student":
+                return Individual.identity 
+            if Individual.identity == "instructor":
+                return Individual.identity 
+        except:
+            print('Invalid input!')
+    def userID(self):
         while True:
-            try:
-                identity = input("Are you a student or instructor? ")
-                if len(identity) == 0:
-                    continue
-                    bad_char = False
-                if identity.isalpha() and identity == "student":
-                    return identity 
-            except:
-                print('Invalid input!')
-    
+            if Individual.identity == "student":
+                Individual.id = input("Enter your user id:")
+                if len(Individual.id) <= 7:
+                    try:
+                        int(Individual.id)
+                        return Individual.id
+                    except:
+                        print("Please enter user id!")
     def get_user_name(self):
         while True:
-            username = input("Enter your name:")
-            if len(username) == 0:
+            Individual.name = input("Enter your Name:")
+            if len(Individual.name) == 0:
                 continue
-            bad_char = False
-            for letter in username:
+            bad_char_hit = False
+            for letter in Individual.name:
                 if letter not in Name_valid_char and not letter.isalpha():
-                    bad_char = True
-            if bad_char == False:
-                return username
+                    bad_char_hit = True
+            if bad_char_hit == False:
                 break
-
+                
     def get_user_email(self):
         while True:
-            user_email = input("Enter your email address:")
-            if user_email == 0:
-                continue
-            bad_char = False 
-            for email in user_email:
-                if email not in Email_valid_char and not user_email.isalnum:
-                    bad_char = True
-            if bad_char == False:
-                return user_email
-            
-            
-    def userID(self):
-        while True: 
-            userid = input("Enter your user id:")
-            if len(userid) <= 7:
-                try:
-                    int(userid)
-                    return userid
-                except:
-                    print("Please enter user id!")
+            if Individual.name.isalpha():
+                Individual.email = input("Enter your email address:")
+                if Individual.email == 0:
+                    continue
+                bad_char = False 
+                for email in Individual.email:
+                    if email not in Email_valid_char and not Individual.email.isalnum:
+                        bad_char = True
+                if bad_char == False:
+                    return Individual.email
 
     def studentmajor(self):
         while True:
             try:
-                userprogram = input("Enter the current program you are enrolled in?")
-                if len(userprogram) == 0:
+                Student.major = input("Enter the current program you are enrolled in?")
+                if len(Student.major) == 0:
                     continue
                 bad_char = False 
-                if userprogram.isalpha(): 
-                    bad_char = True
-                    return userprogram
+                if Student.major.isalpha(): 
+                    return Student.major
             except:
                 print("Please enter current program!")
-class Instructor():
-    def __init__(self):
-        self.instructor_name = input("Enter teachers your name:")
-        self.instructor_id = input("Enter your user id:")
-        self.institution = input("Enter your last institution you graduated from:")
-        self.degree = input("Your highest level of education:")
-        self.instructor_email = input("Enter your email address:")
-    
+    def repeat(self):
+        while True:
+            Repeat = input('Would you like to add another record? (Y,N)')
+            if Repeat == 'N':
+                break
+
+x = Validator()
+x.get_user_input()
+x.userID()
+x.get_user_name()
+x.get_user_email()
+x.studentmajor()
+x.repeat()
+college_records.append(x.get_user_input())
+college_records.append(x.userID())
+college_records.append(x.get_user_name())
+college_records.append(x.get_user_email())
+college_records.append(x.studentmajor)
+for college in college_records:
+    print(college.identity)
+    print(college.id)
+    print(college.name)
+    print(college.email)
+    print(college.major)
+'''  
     def teacher_name(self):
         while True:
             instructor_name = input("Enter your name:")
@@ -136,37 +151,14 @@ class Instructor():
                     bad_char = True
                     return instructor_email
 '''
-class Validator():
-    def __init__subclass(self, college_records_dict_, cls):
-        self.college_records_dict_ = college_records
-        cls.college_records_dict_ = college_records
-    def display(self):
-'''
 
 
 
 
 
-y = Student()
-y.get_user_input()
-y.get_user_name()
-y.get_user_email()
-y.userID()
-y.studentmajor()
-z = Instructor()
-z.teacher_name()
-z.teacher_id()
-z.teacher_college()
-z.teacher_degree()
-z.teachers_email()
-print(z.__dict__)
-
-user = input("Student or Instructor?")
-if user == "Student":
-    student. 
 
 
-z.student()
+
           
 
 

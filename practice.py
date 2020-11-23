@@ -10,10 +10,10 @@ class Individual():
     id_number = " "
 class Student(Individual):
     def __init__(self, username, useremail, usermajor, userid):
-        self.name = username
-        self.email = useremail
-        self.major = usermajor
-        self.id_number = userid
+        self.name = " "
+        self.email = " "
+        self.major = " "
+        self.id_number = " "
         
 
     def student_major(self):
