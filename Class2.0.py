@@ -50,9 +50,7 @@ class Validator(Individual, Student, Instructor):
                                             return Instructor.degree
                 except:
                     ("Please enter your info again!")
-            Repeat = input('Would you like to add another record? (Y,N)')
-            if Repeat == 'N':
-                break
+
 
 
 

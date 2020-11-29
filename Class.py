@@ -19,14 +19,16 @@ class Instructor():
         self.institution = " "
 class Validator(Individual, Student, Instructor):   
     def get_user_input(self):
-        Individual.identity = input("Are you a student or instructor? ")
-        try:
-            if Individual.identity == "student":
-                return Individual.identity 
-            if Individual.identity == "instructor":
-                return Individual.identity 
-        except:
-            print('Invalid input!')
+        while True:
+            Individual.identity = input("Are you a student or instructor? ")
+            try:
+                if Individual.identity == "student":
+                    return Individual.identity 
+                if Individual.identity == "instructor":
+                    return Individual.identity 
+            except:
+                print('Invalid input!')
+            
     def userID(self):
         while True:
             if Individual.identity == "student":
@@ -37,6 +39,7 @@ class Validator(Individual, Student, Instructor):
                         return Individual.id
                     except:
                         print("Please enter user id!")
+            
     def get_user_name(self):
         while True:
             Individual.name = input("Enter your Name:")
@@ -54,14 +57,13 @@ class Validator(Individual, Student, Instructor):
             if Individual.name.isalpha():
                 Individual.email = input("Enter your email address:")
                 if Individual.email == 0:
-                    continue
+                        continue
                 bad_char = False 
                 for email in Individual.email:
-                    if email not in Email_valid_char and not Individual.email.isalnum:
-                        bad_char = True
-                if bad_char == False:
-                    return Individual.email
-
+                    if email in Email_valid_char and Individual.email.isalnum:
+                        return Individual.email
+            
+    
     def studentmajor(self):
         while True:
             try:
@@ -73,11 +75,9 @@ class Validator(Individual, Student, Instructor):
                     return Student.major
             except:
                 print("Please enter current program!")
-    def repeat(self):
-        while True:
-            Repeat = input('Would you like to add another record? (Y,N)')
-            if Repeat == 'N':
-                break
+            
+        
+   
 
 x = Validator()
 x.get_user_input()
@@ -85,7 +85,6 @@ x.userID()
 x.get_user_name()
 x.get_user_email()
 x.studentmajor()
-x.repeat()
 college_records.append(x.get_user_input())
 college_records.append(x.userID())
 college_records.append(x.get_user_name())
@@ -97,6 +96,9 @@ for college in college_records:
     print(college.name)
     print(college.email)
     print(college.major)
+Repeat = input('Would you like to add another record? (Y,N)')
+if Repeat == 'N':
+    bad = True
 '''  
     def teacher_name(self):
         while True:
