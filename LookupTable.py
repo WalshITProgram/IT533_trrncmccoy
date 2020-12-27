@@ -2,7 +2,7 @@
 from cryptography.fernet import Fernet
 from getpass import getpass
 from os.path import exists
-import objcrypt
+
 import json
 Employee_records = {}
 class employee:
@@ -72,15 +72,7 @@ IT = IT(" ")
 IT.IT_id()
 print(Employee_records)
 
-crypter = objcrypt.Crypter('key', 'cbc')
-encrypted_dict = crypter.encrypt_object(Employee_records)
 
-json_dict = json.loads(Employee_records)
-enc_json = crypter.encrypt_json(json_dict)
-
-dec_dict = crypter.decrypt_object(encrypted_dict)
-
-dec_json = crypter.decrypt_json(enc_json)
 
 
 

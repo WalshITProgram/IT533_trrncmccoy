@@ -58,26 +58,29 @@ class Decryption(Encryption):
                 decryption += x
         return decryption 
 
-Encryption_list = []
-Decryption_list = []
+Encryption_list = " "
+Decryption_list = " "
 
 while True:
     plain_text = input("Enter Message:")
     key = int(input("Key Shift:"))
     encryption = Encryption(plain_text, key)
     encryption.encrypt()
-    Encryption_list.append(encryption.encrypt())
     ciphertext = encryption.encrypt()
     decryption = Decryption(ciphertext, key)
     decryption.decrypting()
-    Decryption_list.append(decryption.decrypting())
     repeat = input("Would you like to encrypt another program?")
-    if repeat == "Y":
+    if repeat == "yes":
         bad_char = True
-    if repeat == "N":
+    if repeat == "yes":
         bad_char = False
         break
 
-print("Encryption List:", Encryption_list)
-print("Decryption List:", Decryption_list )
-
+print("Encrypting Information.....")
+sleep(3)
+print(encryption.encrypt())
+print1 = input("Would you like to decrypt this message?")
+if print1 == "yes":
+    print("Decrypting Information......." )
+sleep(3)
+print(decryption.decrypting())
