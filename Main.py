@@ -129,7 +129,7 @@ class instructor():
                 if bad_char == False:
                     staff_dict["Teachers Name"] = Teacher_Name
                     break
-'''
+
 while True:
     college_records = {}
     user_info(staff_dict)
@@ -145,4 +145,3 @@ while True:
     Repeat = input("Would you like to add another record?")
     if Repeat == 'N':
         break
-'''

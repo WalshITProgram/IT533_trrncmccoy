@@ -19,15 +19,14 @@ while True:
         Dividend = input("Dividends:")
         current_year = input("Current Year:")
         Total_year = input("Total Investment Years:")
-        ROi = int(Sold_price) - int(Stock_price) + int(Dividend)/int(Stock_price)
+        ROi = round(int(Sold_price) - int(Stock_price) + int(Dividend)/int(Stock_price))
         ROI["ROI"]= (f"{ROi}%")
 
     divid = int(Dividend) * int(amount_of_shares) * int(Total_year)
     ROI[f"Total Amount of Dividends in {Total_year} Years"] = (f"${divid}")
     Current_Value = int(Sold_price) * int(amount_of_shares)
     Final_Value = divid + Current_Value
-    ROI["Final Investment Value"] = (f"${Final_Value}")
-    annual_return = ((Final_Value / net_buy_price)**(int(current_year)/int(Total_year)) - 1)  * 100
+    annual_return = round(((Final_Value / net_buy_price)**(int(current_year)/int(Total_year)) - 1)  * 100)
     ROI[f"Annual Return: Year {current_year}"] = (f"{annual_return}%")
     user = input("Would you like to enter another record?")
     if user == "no":
