@@ -64,7 +64,7 @@ for y in Integer_Variable:
     print(f"List of Ages: {Integer_Variable}")
     break
 for z in floating_Variable:
-    print(f"List of GPA's:{floating_Variable}")
+    print(f"List of GPA's{floating_Variable}")
     break
 
 

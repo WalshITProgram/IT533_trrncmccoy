@@ -1,14 +1,16 @@
-from VariableSort import VariableSort
-""" Create a three variable with list as values"""
+from Classes.VariableSort import VariableSort
+from Functions.Function import Function
 
+string = []
+number = []
+floating_point = []
+'''
 def get_string():
-    """ Create the a method to create a string variable to vaildate""" 
     string = input("Enter Name:")
 
     string_ok = False
 
     while not string_ok:
-        """ Create an instance to sort the variables"""
         x = VariableSort("", "", "")
 
         string_ok = x.Validate_string(string)
@@ -19,13 +21,11 @@ def get_string():
     return string_ok
 
 def get_int():
-    """ Create a method to create a interger variable to vaildate""" 
     number = input("Enter Age:")
 
     number_ok = False 
     
     while not number_ok:
-        """ Create an instance to sort the variables"""
         x = VariableSort("","","")
         number_ok = x.Validate_integer(number)
         if not number_ok:
@@ -34,37 +34,37 @@ def get_int():
     return number_ok
 
 def get_float():
-    """ Create a method to create a floating variable to vaildate""" 
     flo = input("Enter GPA:") 
 
     flo_ok = False
 
     while not flo_ok:
-        """ Create an instance to sort the variables"""
         x = VariableSort("","","")
         flo_ok = x.Validate_floating_number(flo)
         if not flo_ok:
             flo = input("Please enter GPA again: ")
             flo_ok = x.Validate_floating_number(flo)
     return flo_ok
-
+'''
 while True:
     string_Variable = get_string()
+    string.append(string_Variable)
     Integer_Variable = get_int()
+    number.append(Integer_Variable)
     floating_Variable = get_float()
- 
+    floating_point.append(floating_Variable)
 
     response = input("Would you like to add another record (Y/N)? ")
     if response == "n":
         break
-for x in string_Variable:
-    print(f"List of Names:{string_Variable}")
+for x in string:
+    print(f"List of Names:{string}")
     break
-for y in Integer_Variable:
-    print(f"List of Ages: {Integer_Variable}")
+for y in number:
+    print(f"List of Ages: {number}")
     break
 for z in floating_Variable:
-    print(f"List of GPA's:{floating_Variable}")
+    print(f"List of GPA's{floating_point}")
     break
 
 
