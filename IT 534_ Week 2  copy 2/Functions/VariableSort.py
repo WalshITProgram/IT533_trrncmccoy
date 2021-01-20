@@ -1,36 +1,33 @@
-import pydoc
 class VariableSort(Exception): 
     def __init__(self, word, number, point):
-        """ Create Constructor for VariableSort Class"""
         self.word = word
         self.number = number
         self.point = point
+    def DisplayInformation(self):
+        print("String" + self.word)
+        print("Number" + self.number)
+        print("Floating Point" + self.point)
     
+
     def Validate_string(self, word):
-        """ Create a function to determine if the string is valid"""
-        string = []
         try:
             if str(word):
                 if word.isalpha():
-                    string.append(word)
+                    return word
         except AttributeError:
             print("Wrong Data Type!") 
         
     def Validate_integer(self, number):
-        """ Create a function to determine if the input is a integer"""
-        number = []
         try:
-            if int(digit):
-                if digit.isdigit():
-                    number.append(digit)
+            if int(number):
+                if number.isdigit():
+                    return number
         except ValueError:
             print("")
     def Validate_floating_number(self, point):
-        """ Create a function to determine if the input is a float"""
-        floating_point = []
         try:
             if float(point):
-                floating_point.append(point)
+                return point
         except ValueError:
             print("")
 

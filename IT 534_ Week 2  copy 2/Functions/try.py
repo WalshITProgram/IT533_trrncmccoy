@@ -9,7 +9,7 @@ def get_string():
 
     while not string_ok:
         """ Create an instance to sort the variables"""
-        x = VariableSort("", "", "")
+        x = VariableSort("James", 32, 5.4)
 
         string_ok = x.Validate_string(string)
 
@@ -26,7 +26,7 @@ def get_int():
     
     while not number_ok:
         """ Create an instance to sort the variables"""
-        x = VariableSort("","","")
+        x = VariableSort("Rick",2,3.4)
         number_ok = x.Validate_integer(number)
         if not number_ok:
             number = input("Please enter age again: ")
@@ -41,7 +41,7 @@ def get_float():
 
     while not flo_ok:
         """ Create an instance to sort the variables"""
-        x = VariableSort("","","")
+        x = VariableSort("Kame",23,3.2)
         flo_ok = x.Validate_floating_number(flo)
         if not flo_ok:
             flo = input("Please enter GPA again: ")
@@ -58,13 +58,13 @@ while True:
     if response == "n":
         break
 for x in string_Variable:
-    print(f"List of Names:{string_Variable}")
+    print(f"List of String Values:{string_Variable}")
     break
 for y in Integer_Variable:
-    print(f"List of Ages: {Integer_Variable}")
+    print(f"List of Integer Values: {Integer_Variable}")
     break
 for z in floating_Variable:
-    print(f"List of GPA's:{floating_Variable}")
+    print(f"List of Float Values: {floating_Variable}")
     break
 
 
