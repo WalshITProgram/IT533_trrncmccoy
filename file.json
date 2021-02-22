@@ -1,0 +1,8 @@
+[{ "serverPort": 50333, "debugMode": true, "maxThread": 4, "log": "application.doc", "eventTypes": "Application"}
+{ "serverPort": 51500, "debugMode": true, "maxThread": 2, "log": "security.docx", "eventTypes": "Security"}
+{ "serverPort": 53003, "debugMode": true, "maxThread": 1, "log": "error.ppt", "eventTypes": "Error"} 
+{ "serverPort": 51033, "debugMode": true, "maxThread": 1, "log": "input.pdf", "eventTypes": "Input"}
+{ "serverPort": 52333, "debugMode": true, "maxThread": 2, "log": "output.rtf", "eventTypes": "Output"}]
+
+
+    
