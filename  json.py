@@ -11,7 +11,6 @@ def memory_options():
 
 memory_options()
 
-p = json.loads(j)
-print(json.dumps(j, indent=4, sort_keys=True))
+
 
 

@@ -108,7 +108,7 @@ class App():
     def combo(self):
         self.comboboxVa = ttk.Combobox(self.app_screen, state="readonly", values=self.comboBoxItem)
         self.comboboxVa.grid(row=5, column=2, sticky=NSEW)
-        self.comboboxVa.current()
+        self.comboboxVa.current(0)
 
     def combo5(self):
         self.combo1 = ttk.Combobox(self.app_screen, state="readonly", values=self.comboitem)

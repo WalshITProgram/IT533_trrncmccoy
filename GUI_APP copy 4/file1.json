@@ -1,6 +1,6 @@
 {
-    "debugMode": "off",
-    "Logfile": "Users/File.txt",
+    "debugMode": "on",
+    "Logfile": "Users",
     "event": "Application",
     "file_types": ".doc",
     "Maxthread": "2",

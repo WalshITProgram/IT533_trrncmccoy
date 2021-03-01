@@ -1,8 +1,5 @@
 from tkinter import *
-try:
-    from Classes.Text_subclass import *
-except ImportError:
-    pass
+from Classes.Text_subclass import *
 #from Classes.Menu import *
 from tkinter.filedialog import askopenfilename
 from tkinter.filedialog import *
@@ -20,12 +17,12 @@ import time
 from threading import * 
 
 """
-Create a class called App
-Create a constructor
-Create variables for checkbox, listbutton and combobox
-Create Variables with IntVar() for checkbox 
-Create a list of values labeled options 
-
+Create a class for the Help Desk App
+Create Constructor with values:
+App Screen = Tk function
+Set Up Interface:
+Title = "Help Desk Menu"
+Create a Grid:
 """
 class App():
     def __init__(self):
@@ -59,9 +56,7 @@ class App():
         self.mp4 = IntVar()
         self.mov = IntVar()
 
-# Create a list of variables and bind them to the labels
-# Inside the dictionary create key called labeled
-# Create another key labled bindvar with the file type variable
+
 
         self.file_tp = [{"label": ".doc", "bindVar": self.doc},
                         {"label": ".docx", "bindVar": self.docx}, 
@@ -86,9 +81,6 @@ class App():
                              {"label": "Input", "bindVar": self.incheckbox}, 
                              {"label": "Sever", "bindVar": self.outcheckbox}]
 
-# Create a combobox for Debug Mode/MaxThread/Server
-# Create a list with values 
-# Create setup interface
 
         self.comboboxVa = ttk.Combobox()
         self.comboBoxItem = ["on", "off"]
@@ -101,14 +93,11 @@ class App():
 
         self.setupInterface()
 
-# Create a functions to set up on the help desk menu called combo/combo5/comboserver1/typecheckbox
-# If a user clicks on the item it should add value to json file
-# Declare readonly to prevent changes 
 
     def combo(self):
         self.comboboxVa = ttk.Combobox(self.app_screen, state="readonly", values=self.comboBoxItem)
         self.comboboxVa.grid(row=5, column=2, sticky=NSEW)
-        self.comboboxVa.current()
+        self.comboboxVa.current(0)
 
     def combo5(self):
         self.combo1 = ttk.Combobox(self.app_screen, state="readonly", values=self.comboitem)
@@ -125,11 +114,6 @@ class App():
         for checkBox in self.file_tp:
             Checkbutton(self.app_screen, text=checkBox["label"], variable=checkBox["bindVar"]).grid(row=4, column=col_count, sticky=NSEW)
             col_count = col_count + 1
-            
-# Create checkbox list the values in horizontal row
-# Open json file to add values inside the keys
-# Create a for loop inside the checkboxVars to iterate to variable 
-# Create a dictionary to locate the proper index inside the json file
 
     def filecheckbox(self):
         col_count = 2
@@ -138,7 +122,7 @@ class App():
             col_count = col_count + 1
 
         for checkBox in self.checkBoxVars:
-            filetype = open("/Users/terrancemccoy/IT_533_trrncmcco/IT533_trrncmcco/GUI_APP/file2.json")
+            filetype = open("/Users/terrancemccoy/IT_533_trrncmcco/IT533_trrncmcco/GUI_APP/file1.json")
             dict_to_open = json.load(filetype) 
 
             if dict_to_open['event'] in checkBox:
@@ -156,12 +140,8 @@ class App():
             if dict_to_open['event']in checkBox:
                 file_types_txt = dict_to_open['event']
 
-# Create a getfile function
-# askopenfilename to load the json file with the preset configurations
-# Create a empty variable and create get() to retrieve the values
-
     def getFile(self, *args):
-        openfile = askopenfilename()        
+        openfile = askopenfilename()
         filing = ""
         if self.doc.get() == 1:
             filing = filing + ".doc"
@@ -211,8 +191,6 @@ class App():
         if self.mov.get() == 1:
             filing = filing + ".mov"
 
-# Append the values to the index inside the roles variable
-
         roles = ""
         if self.appcheckbox.get() == 1:
             roles = roles + "Application"
@@ -225,7 +203,12 @@ class App():
         if self.outcheckbox.get() == 1:
             roles = roles + "Output"
 
-# Create dict and values to the proper index 
+        self.LogFile.get()
+        roles 
+        filing
+        self.combo1.get()
+        self.comboboxVa.get()
+        self.servercombo.get()
 
         settings = {}
         settings["Logfile"] = self.LogFile.get()
@@ -234,25 +217,15 @@ class App():
         settings["file_types"] = filing
         settings["Maxthread"] = self.combo1.get()
         settings["serverPort"] = self.servercombo.get()
-# After the variables are attained use the get() to add it to the settings dict 
-        self.LogFile.get()
-        roles 
-        filing
-        self.combo1.get()
-        self.comboboxVa.get()
-        self.servercombo.get()
 
-# Create a function to open the json file and set the variables to the correct index
         if openfile:
-            with open(openfile) as myfile:
-                setting = json.load(myfile)
-                print(setting)
-                self.combo1.set(settings["Maxthread"])
-                self.LogFile.set(settings["Logfile"])
-                self.comboboxVa.set(settings["debugMode"])
-                self.servercombo.set(settings["serverPort"])
-   
-# Same process as the last function except that this save the file to file2.json
+            json_file = open("file2.json")
+            print(open("file2.json").read())
+            json_file.close()
+        self.combo1.set(settings["Maxthread"])
+        self.LogFile.set(settings["Logfile"])
+        self.comboboxVa.set(settings["debugMode"])
+        self.servercombo.set(settings["serverPort"])
 
     def saveFile(self, *args):
         savefile = asksaveasfile()
@@ -316,14 +289,12 @@ class App():
             roles = roles + "Input"
         if self.outcheckbox.get() == 1:
             roles = roles + "Output"
-
         self.LogFile.get()
         roles 
         filing
         self.combo1.get()
         self.comboboxVa.get()
         self.servercombo.get()
-
         settings = {}
         settings["Logfile"] = self.LogFile.get()
         settings["debugMode"] = self.comboboxVa.get()
@@ -331,7 +302,6 @@ class App():
         settings["file_types"] = filing
         settings["Maxthread"] = self.combo1.get()
         settings["serverPort"] = self.servercombo.get()
-
         if savefile:
             for index in settings:
                 s = json.dumps(settings)
@@ -340,14 +310,13 @@ class App():
                 print(open("file2.json").read())
                 json_file.close()
                 break 
-# Create a quit function to exit system 
+
+# Merge getfile and indexitems 
+# curseselection keys 
 
     def quit(self):
         if askyesno('Verify quit', 'Are you sure you want to quit?'):
             self.app_screen.destroy()
-
-# Grid will help you design the GUI app layout 
-# Create 6 text labels and place the functions underneath the Text_label functions
 
     def setupGrid(self):
         text_label = TextFont(self.app_screen, "Max Threads:", 1, 1, 1, 2)
@@ -369,6 +338,7 @@ class App():
         text_label5 = TextFont(self.app_screen, "Server Port #:", 6, 1, 1, 2 )
         self.comboserver1()
 
+
         submitButton = Button(self.app_screen, text="Submit")
         submitButton.grid(row=8, column=2, sticky=NSEW)
         submitButton.bind("<Button-1>", self.submitData)
@@ -376,7 +346,7 @@ class App():
         loadButton = Button(self.app_screen, text= "Load")
         loadButton.grid(row=8, column=1, sticky=NSEW) 
         loadButton.bind("<Button-1>", self.getFile)
-# Create Menu and add commands to the menu such as load and save settings 
+
     def Menu(self):
         topMenu = Menu(self.app_screen)
         self.app_screen.config(menu=topMenu)
@@ -387,16 +357,13 @@ class App():
         topMenu.add_cascade(label='Config Settings', menu=jfile)
         self.app_screen.bind_all("<Control-1>", self.getFile)
         self.app_screen.bind_all("<Control-s>", self.submitData)
-
-# Interface lets you design the layout and structure of the GUI APP 
-
+    
     def setupInterface(self):
         self.app_screen.title("Help Desk Menu")
         self.Menu()
         self.setupGrid()
         self.app_screen.mainloop()
-
-# Create a sumbitdata function to obtain the information from get()
+    
     def submitData(self, *passed_args):
         filing = ""
         if self.doc.get() == 1:
@@ -446,8 +413,6 @@ class App():
 
         if self.mov.get() == 1:
             filing = filing + ".mov"
- 
- # Retrieve the values from the appcheckbox and assign it to the roles variable 
 
         roles = ""
         if self.appcheckbox.get() == 1:
@@ -467,6 +432,7 @@ class App():
         self.comboboxVa.get()
         self.combo1.get()
         self.servercombo.get()
+        
   
         settings = {}
         settings["debugMode"] = self.comboboxVa.get()
@@ -475,7 +441,6 @@ class App():
         settings["file_types"] = filing
         settings["Maxthread"] = self.combo1.get()
         settings["serverPort"] = self.servercombo.get()
-# Open json file and save the settings to the file
         for index in settings:
             s = json.dumps(settings)
             json.dump(settings, fp=open("file1.json", 'w'), indent = 4)

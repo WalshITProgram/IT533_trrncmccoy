@@ -1,8 +1,8 @@
 {
+    "Logfile": "USets",
     "debugMode": "off",
-    "Logfile": "Users/File.txt",
     "event": "Application",
     "file_types": ".doc",
-    "Maxthread": "2",
-    "serverPort": "50300"
+    "Maxthread": "1",
+    "serverPort": "50200"
 }
